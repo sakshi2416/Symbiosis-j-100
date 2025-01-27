@@ -1,0 +1,90 @@
+<!-- Main container to hold the entire content -->
+<div class="container">
+    
+    <!-- Page header section -->
+    <header>
+        <h1> Supplier Information</h1>  <!-- Main heading of the page -->
+    </header>
+
+    <!-- Button to open the form for adding a new supplier -->
+    <button (click)="showAddSupplierForm = true">Add Supplier</button>
+
+    <!-- Form to add a new supplier - this section appears conditionally -->
+    <div *ngIf="showAddSupplierForm" class="add-supplier-form">
+        
+        <!-- Subheading for the form -->
+        <h2>Add New Supplier</h2>
+        
+        <!-- Form element to submit supplier details -->
+        <form (ngSubmit)="addSupplier()">
+            
+            <!-- Label and input for supplier name -->
+            <label for="name">Supplier Name:</label>
+            
+            <!-- Input box for supplier name with two-way data binding -->
+            <input [(ngModel)]="newSupplier.name" 
+                   id="name" 
+                   name="name" 
+                   placeholder="Supplier Name" 
+                   required />
+
+            <!-- Label and input for contact number -->
+            <label for="contact">Contact:</label>
+            
+            <!-- Input box for contact number with validation and binding -->
+            <input [(ngModel)]="newSupplier.contact" 
+                   id="contact"
+                   name="contact" 
+                   placeholder="Contact Number" 
+                   required 
+                   pattern="^[1-9][0-9]{9}$"  
+                   #contact="ngModel"/> <!-- Reference to contact input for validation -->
+            
+            <!-- Error message displayed if contact is invalid and touched -->
+            <div *ngIf="contact.invalid && contact.touched" class="error">
+                Invalid contact number (must be 10 digits and cannot start with 0).
+            </div>
+
+            <!-- Label and input for supplier address -->
+            <label for="address">Address:</label>
+            
+            <!-- Input box for address with binding and required validation -->
+            <input [(ngModel)]="newSupplier.address" 
+                   id="address" 
+                   name="address" 
+                   placeholder="Supplier Address" 
+                   required />
+            
+            <!-- Button to submit the form -->
+            <button type="submit">Add Supplier</button>
+            
+            <!-- Button to cancel the form (closes without submitting) -->
+            <button type="button" (click)="showAddSupplierForm = false">Cancel</button>
+        
+        </form>
+    </div>
+ 
+    <!-- Section to display the list of suppliers -->
+    <section class="supplier-details">
+        
+        <!-- Heading for supplier details -->
+        <h2><br>Supplier Details</h2>
+        
+        <!-- Loop through each supplier and display their details in a card -->
+        <div *ngFor="let supplier of suppliers" class="card">
+            
+            <!-- Display supplier name -->
+            <p><strong>Supplier Name:</strong> {{ supplier.name }}</p>
+            
+            <!-- Display supplier contact number -->
+            <p><strong>Contact:</strong> {{ supplier.contact }}</p>
+            
+            <!-- Display supplier address -->
+            <p><strong>Address:</strong> {{ supplier.address }}</p>
+            
+            <!-- Button to delete supplier from the list -->
+            <button (click)="deleteSupplier(supplier.id)" class="delete-btn">Delete</button>
+        
+        </div>
+    </section>
+</div>

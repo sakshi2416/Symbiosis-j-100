@@ -1,0 +1,140 @@
+/*remember - 3rem is 3 times the font size of the root element(html tag in html file). If the root font size is 16px, then 3rem is 48px*/
+.container {
+  max-width: 800px; /* Limits the width of the container to 800px */
+  margin: 2rem auto; /* Adds 2rem of margin on top and bottom, and auto horizontal margin for centering */
+  padding: 1.5rem; /* Adds 1.5rem of padding inside the container */
+  background-color: #f9f9f9; /* Sets a light gray background color for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the container */
+  border-radius: 8px; /* Rounds the corners of the container */
+  font-family: Arial, sans-serif; /* Sets the font family to Arial */
+}
+
+/* Header styling */
+header {
+  text-align: center; /* Centers the text inside the header */
+  margin-bottom: 2rem; /* Adds 2rem of space below the header */
+}
+
+header h1 {
+  color: black; /* Sets the text color of the heading to black */
+  font-size: 3rem; /* Sets the font size of the header to 3rem */
+}
+
+/* Card styling for details, medicines, and orders */
+.card {
+  background-color: #ffffff; /* Sets the card background color to white */
+  border: 1px solid #dcdcdc; /* Adds a light gray border around the card */
+  padding: 2rem; /* Adds 2rem of padding inside the card */
+  margin: 2rem 0; /* Adds 2rem of margin on top and bottom of the card */
+  border-radius: 5px; /* Rounds the corners of the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow around the card */
+}
+
+/* Button styling */
+button {
+  background-color: #00796b; /* Sets the background color of the button */
+  color: white; /* Sets the text color of the button to white */
+  padding: 1rem 1rem; /* Adds 1rem of padding on all sides of the button */
+  border: none; /* Removes the border of the button */
+  border-radius: 8px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  transition: background-color 0.3s ease; /* Adds a smooth background color transition */
+  font-size: 1rem; /* Sets the font size of the button text to 1rem */
+}
+
+button:hover {
+  background-color: #00796b; /* Keeps the same background color when hovering */
+}
+
+/* Label styling */
+form label {
+  font-size: 1.5rem;  /* Increases the font size of labels to 1.5rem */
+  margin: 3rem 0 1rem;  /* Adds 3rem of space above the label and 1rem below it */
+  display: block;  /* Ensures that the label is displayed as a block element, so it occupies its own line */
+}
+
+/* Form styling */
+form {
+  display: flex;  /* Applies a flexbox layout to the form */
+  flex-direction: column; /* Arranges form elements vertically */
+}
+
+/* Form container */
+.add-supplier-form {
+  margin-top: 2rem; /* Adds 2rem of space above the form */
+  padding: 5rem; /* Adds 4rem of padding inside the form */
+  background-color: #e1dada; /* Sets a light pinkish background color for the form */
+  border-radius: 3px; /* Rounds the corners of the form */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Adds a deeper shadow for emphasis around the form */
+  max-width: 700px;  /* Restricts the maximum width of the form to 700px */
+  margin-left: auto;  /* Centers the form horizontally */
+  margin-right: auto;  /* Centers the form horizontally */
+}
+
+/* Form buttons - spacing and alignment */
+/* Form buttons */
+form button {
+  margin-top: 2rem;  /* Adds 2rem of space above the form button */
+  padding: 1rem 2rem;  /* Increases padding inside the button */
+  font-size: 1.1rem;  /* Increases the font size of the button text */
+  border-radius: 0.5px; /* Adds slightly rounded corners to the form button */
+}
+
+/* Delete Button Styling */
+.delete-btn {
+  background-color: #842029; /* Sets the background color of the delete button to a deep red */
+  color: white; /* Sets the text color of the delete button to white */
+  padding: 0.3rem 0.8rem; /* Adds padding to the delete button */
+  border: none; /* Removes the border of the delete button */
+  border-radius: 4px; /* Adds rounded corners to the delete button */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the delete button */
+  font-size: 0.9rem; /* Sets the font size of the delete button text */
+  margin-left: 1rem; /* Adds 1rem of space to the left of the delete button */
+}
+
+.delete-btn:hover {
+  background-color: #842029; /* Keeps the same red background color when hovering over the delete button */
+}
+
+/* Error message styling */
+.error {
+  color: red; /* Sets the text color of error messages to red */
+  font-size: 1rem; /* Sets the font size of error messages to 1rem */
+  margin-top: 0.5rem; /* Adds 0.5rem of space above the error message */
+}
+
+/* Adjust header spacing in form */
+.add-supplier-form h2 {
+  margin-bottom: 1rem; /* Adds 1rem of space below the heading */
+  font-size: 2rem; /* Increases the font size of the heading */
+  text-align: center; /* Centers the heading text */
+}
+
+/* Increase text box size for supplier form */
+.add-supplier-form input [type="text"],
+.add-supplier-form input[type="number"] {
+  width: 100%;  /* Makes the input fields take up the full width of the form container */
+  padding: 3rem;  /* Adds padding inside the input fields */
+  margin: 1rem 0;  /* Adds 1rem of space above and below the input fields */
+  border: 1px solid #ccc; /* Sets a light gray border around the input fields */
+  border-radius: 8px; /* Rounds the corners of the input fields */
+  font-size: 1.7rem;  /* Increases the font size of the text inside the input fields */
+  height: 5rem;  /* Increases the height of the input fields */
+  box-sizing:border-box; /* Ensures padding and border are included in the element's total width and height */
+}          /* this is not working */
+
+/* Increase Supplier Details heading size */
+.supplier-details h2 {
+  font-size: 1.5rem;  /* Increases the font size of the supplier details heading */
+  border-top: 3px solid #221e1e;  /* Adds a dark border between sections */
+  margin-top: 3rem;  /* Adds 3rem of space above the heading */
+  margin-bottom: 1.5rem;  /* Adds 1.5rem of space below the heading */
+  text-align: left;  /* Aligns the heading text to the left */
+  color: #333;  /* Darkens the heading text color */
+}
+
+/*changinf color of buttons */
+button:hover{
+  background-color: #243e24;  /* Blue on hover */
+}
+

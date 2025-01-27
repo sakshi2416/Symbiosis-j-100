@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+    <modelVersion>4.0.0</modelVersion>  <!-- Version of the POM model being used, 4.0.0 is the latest standard -->
+
+    <parent>
+        <!-- Defining the parent project (Spring Boot starter parent project) -->
+        <groupId>org.springframework.boot</groupId>  <!-- The group ID for Spring Boot -->
+        <artifactId>spring-boot-starter-parent</artifactId>  <!-- The artifact ID for Spring Boot's parent project -->
+        <version>3.2.0</version>  <!-- The version of Spring Boot used, change it to the latest version -->
+        <relativePath/>  <!-- Tells Maven to look for the parent in the repository (if needed) -->
+    </parent>
+
+    <!-- Project information -->
+    <groupId>com.example</groupId>  <!-- The unique group identifier for your project -->
+    <artifactId>Sakshi-supplier</artifactId>  <!-- The artifact ID, which is the name of your project -->
+    <version>0.0.1-SNAPSHOT</version>  <!-- The version of your project, 0.0.1-SNAPSHOT means it's a development version -->
+    <name>medical-system</name>  <!-- A name for your project -->
+    <description>Demo project for Spring Boot</description>  <!-- Short description of your project -->
+
+    <properties>
+        <java.version>17</java.version>  <!-- The version of Java being used in the project (Java 17 in this case) -->
+    </properties>
+
+    <!-- Project dependencies (libraries required for the project) -->
+    <dependencies>
+        <!-- Dependency for Spring Data JPA (used for database access and management) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Dependency for Spring Web (used to build web applications, including RESTful APIs) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- MySQL connector to allow your Spring Boot application to communicate with a MySQL database -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>  <!-- Means this dependency is only needed during runtime, not compile time -->
+        </dependency>
+
+        <!-- Dependency for Lombok (helps reduce boilerplate code like getters, setters, constructors) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>  <!-- Lombok is optional, but it's commonly used to reduce code verbosity -->
+        </dependency>
+
+        <!-- Dependency for testing the application with Spring Boot (JUnit, MockMvc, etc.) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>  <!-- This dependency is only needed for testing purposes -->
+        </dependency>
+    </dependencies>
+
+    <!-- Build configuration (how the project will be built) -->
+    <build>
+        <plugins>
+            <!-- Plugin for Maven compiler to handle Java source code and annotation processing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <!-- Lombok is used for annotation processing, so it's specified here -->
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <!-- Spring Boot Maven plugin for packaging the application into an executable JAR -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <!-- Excluding Lombok from the packaged JAR file since it's only needed for development -->
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
